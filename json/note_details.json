@@ -1,0 +1,6 @@
+{
+    "error": {
+        "message": "パラメータが不正です",
+        "type": "bad_request"
+    }
+}

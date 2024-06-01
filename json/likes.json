@@ -1,0 +1,47 @@
+{
+    "data": {
+        "user_likes": false,
+        "like_count": 3,
+        "likes": [
+            {
+                "id": 294555540,
+                "created_at": "2023-05-28T18:27:26.000+09:00",
+                "user": {
+                    "id": 7548467,
+                    "nickname": "AI無知倫理学（AI Agnoethics）",
+                    "urlname": "aiethics496",
+                    "user_profile_image_path": "https://assets.st-note.com/production/uploads/images/107751417/profile_8767f546bf01ea290d00f7459bbfb3d1.png?fit=bounds&format=jpeg&quality=85&width=330",
+                    "is_me": false,
+                    "is_following": false,
+                    "custom_domain": null
+                }
+            },
+            {
+                "id": 294209836,
+                "created_at": "2023-05-27T08:15:55.000+09:00",
+                "user": {
+                    "id": 1331648,
+                    "nickname": "poporin",
+                    "urlname": "papo",
+                    "user_profile_image_path": "https://assets.st-note.com/production/uploads/images/72612845/profile_5b16b4fdcdea530578fcfa98a2aa1785.jpg?fit=bounds&format=jpeg&quality=85&width=330",
+                    "is_me": false,
+                    "is_following": false,
+                    "custom_domain": null
+                }
+            },
+            {
+                "id": 293993298,
+                "created_at": "2023-05-26T08:37:52.000+09:00",
+                "user": {
+                    "id": 3976646,
+                    "nickname": "popodoll",
+                    "urlname": "popodoll",
+                    "user_profile_image_path": "https://assets.st-note.com/production/uploads/images/41164998/profile_2c12c2595361e8fa0e8e06424abea45f.png?fit=bounds&format=jpeg&quality=85&width=330",
+                    "is_me": false,
+                    "is_following": false,
+                    "custom_domain": null
+                }
+            }
+        ]
+    }
+}

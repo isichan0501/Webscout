@@ -1,0 +1,40 @@
+1. Approaching AI The Right Way Across Your Enterprise (URL: https://www.forbes.com/sites/forbestechcouncil/2024/05/30/approaching-ai-the-right-way-across-your-enterprise/) Here are a few crucial business-level tips you should consider discussing even considering what AI-powered technologies are worth investing in.
+
+2. How You Can Avoid Using Meta AI (URL: https://www.msn.com/en-us/news/technology/one-tech-tip-want-to-turn-off-meta-ai-you-cant-but-there-are-some-workarounds/ar-BB1nk2Du) On the Facebook mobile app, tap the "search" button. You may get a prompt to "Ask Meta AI anything." Tap the blue triangle on the right, then the blue circle with an "i" inside it. Here, you'll see a "mute" button, with options to silence the chatbot for 15 minutes or longer, or "Until I change it." You can do the same on Instagram.
+
+3. 2024 Is the Year of the Generative AI Election (URL: https://www.wired.com/story/2024-is-the-year-of-generative-ai-elections/) AI is already being used and abused in elections around the world. From passive income scams to dead men endorsing their successors, fiction is proving stranger than reality.
+
+4. Mistral AI (URL: https://www.msn.com/en-us/money/other/mistral-ai-2024-time100-most-influential-companies/ar-BB1nkho8) Paris-based Mistral AI has rapidly risen as a homegrown European AI champion, earning the praise of French President Emmanuel Macron. The startup has released six AI language models that can answer questions,
+
+5. 'All Eyes on Rafah.' A viral post uses AI in the service of activism. Is it ethical? (URL: https://www.msn.com/en-us/news/other/all-eyes-on-rafah-a-viral-post-uses-ai-in-the-service-of-activism-is-it-ethical/ar-BB1nk3OG) Generative AI offers activists an easier and cheaper tool to create powerful images without relying on stock photos or breaching Meta rules, but experts say it could also lead to abuse.
+
+6. China unveils ambitious three-year plan to dominate AI and computing standards (URL: https://www.computerworld.com/article/2132168/china-unveils-ambitious-three-year-plan-to-dominate-ai-and-computing-standards.html) The plan focuses on strengthening research and developing standards for advanced chips, computing power infrastructure, quantum technology applications, brain-computer interfaces, and AI.
+
+7. iOS 18's killer AI feature might be data privacy unlike anyone else (URL: https://www.msn.com/en-us/news/technology/ios-18s-killer-ai-feature-might-be-data-privacy-unlike-anyone-else/ar-BB1nk3hb) Apple is building strong privacy protections in iOS 18 for processing cloud-based AI requests and Siri: Here comes confidential-computing.
+
+8. UN chief cites the promise and perils of dizzying new technology as 'AI for Good' conference opens (URL: https://www.msn.com/en-us/news/technology/un-chief-cites-the-promise-and-perils-of-dizzying-new-technology-as-ai-for-good-conference-opens/ar-BB1njLvO) The U.N. telecommunications agency has kicked off its annual AI for Good conference in hopes of guiding business, consumers and governments on ways to tap the promise of the new technology but avoid i
+
+9. Tech giants form an industry group to help develop next-gen AI chip components (URL: https://techcrunch.com/2024/05/30/tech-giants-form-new-group-in-effort-to-wean-off-of-nvidia-hardware/) Microsoft, Meta, Intel, AMD and others have formed a new group to design next-gen interconnects for AI accelerator hardware.
+
+10. Meta is using your posts to train AI. It's not easy to opt out. (URL: https://www.msn.com/en-us/news/technology/meta-is-using-your-posts-to-train-ai-its-not-easy-to-opt-out/ar-BB1njRpA) More recently, Meta expanded its AI-powered features by making Meta AI the default search bar on Facebook, Instagram, Messenger, and WhatsApp and enabling users to chat with the AI about specific posts. Unfortunately for many who found this irksome, you can't turn it off.
+
+11. More Details About iOS 18's AI Features Revealed (URL: https://www.macrumors.com/2024/05/30/more-details-about-ios-18s-ai-features-revealed/) Apple is planning to introduce new AI features including Smart Replies for messages and a generative retouch tool for photos in iOS 18, a new
+
+12. This Record Stock Market Is Riding on Questionable AI Assumptions (URL: https://www.msn.com/en-us/money/other/this-record-stock-market-is-riding-on-questionable-ai-assumptions/ar-BB1nistR) Just four giant technology stocks added more market value than the rest of the S&P 500 put together this month. More than half of the gain came from Nvidia.
+
+13. This stock fund has beaten the S&P 500 with bets on 'enablers' in AI and beyond (URL: https://www.msn.com/en-us/money/topstocks/this-stock-fund-has-beaten-the-s-p-500-with-bets-on-enablers-in-ai-and-beyond/ar-BB1nk7Fz) The Putnam Large Cap Fund holds Class C shares of Alphabet Inc., while the other two funds hold both Class C and Class A shares of that company. To simplify the table, any holdings of Alphabet are the sum of the funds' Class C GOOG, -0.35% and Class A GOOGL, -0.28% shares.
+
+14. C3.ai's Results Were Good. 'Demand for Enterprise AI Is Intensifying.' (URL: https://www.msn.com/en-us/money/topstocks/c3ai-s-earnings-were-good-the-stock-is-soaring/ar-BB1nhBMi) We finished a strong quarter and closed out a huge year,," said CEO Tom Siebel in an announcement after Wednesday's close.
+
+15. These Stocks Are Moving the Most Today: Salesforce, UiPath, Agilent, C3.ai, HP Inc., Foot Locker, Pure Storage, Nutanix, and More (URL: https://www.msn.com/en-us/money/topstocks/these-stocks-are-moving-the-most-today-salesforce-uipath-kohl-s-foot-locker-agilent-c3ai-hp-inc-and-more/ar-BB1njo7m) Salesforce issues a weak outlook and the stock slumps, UiPath's revenue outlook comes in well below analysts' estimates, and Agilent reduces its fiscal-year forecast for adjusted earnings and revenue.
+
+16. Email Innovator Superhuman Says Its AI Search Is Twice as Fast as Gmail's (URL: https://www.msn.com/en-us/money/smallbusiness/email-innovator-superhuman-says-its-ai-search-is-twice-as-fast-as-gmails/ar-BB1nhWax) Superhuman says it can beat Gmail in a race--of AI tools.
+
+17. OpenAI CTO Says Generative AI's Economic Impact Only Starting (URL: https://www.bloomberg.com/news/articles/2024-05-30/openai-cto-says-generative-ai-s-economic-impact-only-starting) Generative artificial intelligence is only just starting to make its economic impact felt, OpenAI Inc. Chief Technology Officer Mira Murati said.
+
+18. TikTok's new AI ad offerings are a mixed bag, agency execs say (URL: https://adage.com/article/digital-marketing-ad-tech-news/tiktok-ai-ad-offerings-get-mixed-reactions-agency-execs/2562576) TikTok last week deepened its menu of AI-powered advertising tech with the launch of Symphony, a suite of tools that includes a video generator, ads manager and rebranded virtual assistant.
+
+19. AI models have favorite numbers, because they think they're people (URL: https://techcrunch.com/2024/05/28/ai-models-have-favorite-numbers-because-they-think-theyre-people/) AI models are always surprising us, not just in what they can do, but also in what they can't, and why. An interesting new behavior is both superficial
+
+20. Ready to upskill? Look to the edge (where it's not all about AI) (URL: https://www.msn.com/en-us/money/other/ready-to-upskill-look-to-the-edge-where-it-s-not-all-about-ai/ar-BB1ni5Zm) While everyone's worrying about AI design and development, edge and IoT computing may be reshaping or creating even more technology opportunities.
+

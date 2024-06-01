@@ -1,0 +1,91 @@
+{
+    "data": {
+        "categories": [
+            {
+                "name": "注目",
+                "order": 0,
+                "endpoint": "https://note.com/api/v1/top_articles"
+            },
+            {
+                "id": 1,
+                "name": "マンガ",
+                "engName": "manga",
+                "order": 1.0,
+                "endpoint": "https://note.com/api/v1/categories/manga?note_intro_only=true",
+                "url": "/categories/manga"
+            },
+            {
+                "id": 2,
+                "name": "コラム・エッセイ",
+                "engName": "column",
+                "order": 2.0,
+                "endpoint": "https://note.com/api/v1/categories/column?note_intro_only=true",
+                "url": "/categories/column"
+            },
+            {
+                "id": 3,
+                "name": "小説",
+                "engName": "novel",
+                "order": 3.0,
+                "endpoint": "https://note.com/api/v1/categories/novel?note_intro_only=true",
+                "url": "/categories/novel"
+            },
+            {
+                "id": 4,
+                "name": "写真",
+                "engName": "photo",
+                "order": 4.0,
+                "endpoint": "https://note.com/api/v1/categories/photo?note_intro_only=true",
+                "url": "/categories/photo"
+            },
+            {
+                "id": 134,
+                "name": "ラジオ",
+                "engName": "radio",
+                "order": 5.0,
+                "endpoint": "https://note.com/api/v1/categories/radio?note_intro_only=true",
+                "url": "/categories/radio"
+            },
+            {
+                "id": 5,
+                "name": "音楽",
+                "engName": "music",
+                "order": 6.0,
+                "endpoint": "https://note.com/api/v1/categories/music?note_intro_only=true",
+                "url": "/categories/music"
+            },
+            {
+                "id": null,
+                "name": "ビジネス",
+                "engName": "business",
+                "order": 6,
+                "endpoint": null,
+                "url": "topic/business"
+            },
+            {
+                "id": null,
+                "name": "ライフスタイル",
+                "engName": "lifestyle",
+                "order": 7,
+                "endpoint": null,
+                "url": "topic/lifestyle"
+            },
+            {
+                "id": 8,
+                "name": "テクノロジー",
+                "engName": "tech",
+                "order": 9.0,
+                "endpoint": "https://note.com/api/v1/categories/tech?note_intro_only=true",
+                "url": "/categories/tech"
+            },
+            {
+                "id": null,
+                "name": "デザイン",
+                "engName": "design",
+                "order": 10,
+                "endpoint": null,
+                "url": "topic/design"
+            }
+        ]
+    }
+}
