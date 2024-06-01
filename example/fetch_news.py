@@ -6,7 +6,7 @@ def fetch_news(keywords, timelimit):
     with WEBS() as webs_instance:
         WEBS_news_gen = webs_instance.news(
             keywords,
-            region="wt-wt",
+            region="ja-ja",
             safesearch="off",
             timelimit=timelimit,
             max_results=20

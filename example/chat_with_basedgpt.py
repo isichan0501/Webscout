@@ -6,7 +6,7 @@ def chat_with_basedgpt(prompt):
     return response
 
 def main():
-    prompt = "What is the capital of France?"
+    prompt = "オンラインビジネスのアイディアをブレインストーミングしてください"
     response = chat_with_basedgpt(prompt)
     print(response)
 
