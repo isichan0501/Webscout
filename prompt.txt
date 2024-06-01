@@ -1,0 +1,2 @@
+Could you organise the Python code extracted from README.md as functions and save each function as a separate Python file in the example folder?
+You can find an example of creating a Python file in the example folder.
