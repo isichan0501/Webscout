@@ -1,10 +1,11 @@
 from .webscout_search import WEBS
 from .webscout_search_async import AsyncWEBS
 from .version import __version__
-from .DWEBS import DeepWEBS
+from .DWEBS import *
 from .transcriber import transcriber
 from .voice import play_audio
-# from .tempid import Client as TempMailClient, TemporaryPhoneNumber
+from .websx_search import WEBSX
+
 from .LLM import LLM
 # from .Local import *
 import g4f
@@ -35,6 +36,8 @@ webai = [
    "auto",
    "poe",
    "basedgpt",
+   "deepseek",
+   "deepinfra",
 ]
 
 gpt4free_providers = [
@@ -60,34 +63,43 @@ __all__ = [
    # "formats", 
 
    # AI Providers
-   "ThinkAnyAI",
-   "Xjai",
-   "LLAMA2",
-   "AsyncLLAMA2",
-   "Cohere",
-   "REKA",
-   "GROQ",
-   "AsyncGROQ",
-   "OPENAI",
-   "AsyncOPENAI",
-   "LEO",
-   "AsyncLEO",
-   "KOBOLDAI",
-   "AsyncKOBOLDAI",
-   "OPENGPT",
-   "AsyncOPENGPT",
-   "PERPLEXITY",
-   "BLACKBOXAI",
-   "AsyncBLACKBOXAI",
-   "PhindSearch",
-   "AsyncPhindSearch",
-   "YEPCHAT",
-   "AsyncYEPCHAT",
-   "YouChat",
-   "GEMINI",
-   "Berlin4h",
-   "ChatGPTUK",
-   "POE"
+    'ThinkAnyAI',
+    'Xjai',
+    'LLAMA2', 
+    'AsyncLLAMA2',
+    'Cohere',
+    'REKA',
+    'GROQ',
+    'AsyncGROQ',
+    'OPENAI',
+    'AsyncOPENAI',
+    'LEO',
+    'AsyncLEO',
+    'KOBOLDAI',
+    'AsyncKOBOLDAI',
+    'OPENGPT', 
+    'AsyncOPENGPT',
+    'PERPLEXITY',
+    'BLACKBOXAI', 
+    'AsyncBLACKBOXAI',
+    'PhindSearch', 
+    'AsyncPhindSearch',
+    'YEPCHAT',
+    'AsyncYEPCHAT',
+    'YouChat',
+    'GEMINI',
+    'Berlin4h',
+    'ChatGPTUK',
+    'POE',
+    'BasedGPT',
+    'DeepSeek',
+    'DeepInfra',
+    'VLM',
+    'AsyncDeepInfra',
+    'VTLchat',
+    'AsyncPhindv2',
+    'Phindv2',
+    'OPENGPTv2',
 ]
 
 import logging

@@ -39,14 +39,14 @@ Search for anything using Google, DuckDuckGo, phind.com, Contains AI models, can
     - [Temp number](#temp-number)
     - [Tempmail](#tempmail)
   - [Transcriber](#transcriber)
-  - [DeepWEBS: Advanced Web Searches](#deepwebs-advanced-web-searches)
-    - [Activating DeepWEBS](#activating-deepwebs)
-    - [Point to remember before using `DeepWEBS`](#point-to-remember-before-using-deepwebs)
+  - [DWEBS: Advanced Web Searches](#dwebs-advanced-web-searches)
+    - [Activating DWEBS](#activating-dwebs)
+    - [Point to remember before using `DWEBS`](#point-to-remember-before-using-dwebs)
     - [Usage Example](#usage-example)
   - [Text-to-Speech:](#text-to-speech)
     - [Available TTS Voices:](#available-tts-voices)
   - [Exceptions](#exceptions)
-  - [usage of webscout](#usage-of-webscout)
+  - [usage of WEBS](#usage-of-webs)
     - [1. `text()` - text search by DuckDuckGo.com](#1-text---text-search-by-duckduckgocom)
     - [2. `answers()` - instant answers by DuckDuckGo.com](#2-answers---instant-answers-by-duckduckgocom)
     - [3. `images()` - image search by DuckDuckGo.com](#3-images---image-search-by-duckduckgocom)
@@ -55,6 +55,7 @@ Search for anything using Google, DuckDuckGo, phind.com, Contains AI models, can
     - [6. `maps()` - map search by DuckDuckGo.com](#6-maps---map-search-by-duckduckgocom)
     - [7. `translate()` - translation by DuckDuckGo.com](#7-translate---translation-by-duckduckgocom)
     - [8. `suggestions()` - suggestions by DuckDuckGo.com](#8-suggestions---suggestions-by-duckduckgocom)
+  - [usage of WEBSX -- Another Websearch thing](#usage-of-websx----another-websearch-thing)
   - [ALL acts](#all-acts)
   - [Webscout Supported Acts:](#webscout-supported-acts)
   - [usage of webscout AI](#usage-of-webscout-ai)
@@ -75,11 +76,13 @@ Search for anything using Google, DuckDuckGo, phind.com, Contains AI models, can
     - [14. `chatgptuk` - Chat with gemini-pro](#14-chatgptuk---chat-with-gemini-pro)
     - [15. `poe`- chat with poe](#15-poe--chat-with-poe)
     - [16. `BasedGPT` - chat with GPT](#16-basedgpt---chat-with-gpt)
+    - [17. `DeepSeek` -chat with deepseek](#17-deepseek--chat-with-deepseek)
+    - [18. Deepinfra](#18-deepinfra)
+    - [19. Deepinfra - VLM](#19-deepinfra---vlm)
     - [`LLM`](#llm)
     - [`Local-LLM` webscout can now run GGUF models](#local-llm-webscout-can-now-run-gguf-models)
-    - [`Function-calling-local-llm`](#function-calling-local-llm)
+    - [`Local-rawdog`](#local-rawdog)
     - [`LLM` with internet](#llm-with-internet)
-    - [LLM with deepwebs](#llm-with-deepwebs)
   - [`Webai` - terminal gpt and a open interpeter](#webai---terminal-gpt-and-a-open-interpeter)
 
 ## Install
@@ -325,68 +328,76 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-## DeepWEBS: Advanced Web Searches
 
-`DeepWEBS` is a standalone feature designed to perform advanced web searches with enhanced capabilities. It is particularly powerful in extracting relevant information directly from webpages and Search engine, focusing exclusively on text (web) searches. Unlike the `WEBS` , which provides a broader range of search functionalities, `DeepWEBS` is specifically tailored for in-depth web searches.
+## DWEBS: Advanced Web Searches
 
-### Activating DeepWEBS
+`DWEBS` is a standalone feature designed to perform advanced web searches with enhanced capabilities. It is particularly powerful in extracting relevant information directly from webpages and Search engine, focusing exclusively on text (web) searches. Unlike the `WEBS` , which provides a broader range of search functionalities, `DWEBS` is specifically tailored for in-depth web searches.
 
-To utilize the `DeepWEBS` feature, you must first create an instance of the `DeepWEBS` . This is designed to be used independently of the `WEBS` , offering a focused approach to web searches.
+### Activating DWEBS
 
-### Point to remember before using `DeepWEBS`
-As `DeepWEBS` is designed to extract relevant information directly from webpages and Search engine, It extracts html from webpages and saves them to folder named files in `DeepWEBS` that can be found at `C:\Users\Username\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\DeepWEBS`
+To utilize the `DWEBS` feature, you must first create an instance of the `DWEBS` . This is designed to be used independently of the `WEBS` , offering a focused approach to web searches.
+
+### Point to remember before using `DWEBS`
+As `DWEBS` is designed to extract relevant information directly from webpages and Search engine, It extracts html from webpages and saves them to folder named files 
 
 ### Usage Example
 
-Here's a basic example of how to use the `DeepWEBS` :
+Here's a basic example of how to use the `DWEBS` :
 ```python
-from webscout import DeepWEBS
+from webscout import DWEBS
 
-def perform_web_search(query):
-    # Initialize the DeepWEBS class
-    D = DeepWEBS()
-    
-    # Set up the search parameters
-    search_params = D.DeepSearch(
-        queries=[query], # Query to search
-        result_num=5, # Number of search results
-        safe=True, # Enable SafeSearch
-        types=["web"], # Search type: web
-        extract_webpage=True, # True for extracting webpages
-        overwrite_query_html=False,
-        overwrite_webpage_html=False,
+def finalextractor(extract_webpage=True):
+    print('---------------Here Running for GoogleSearch--------------------')
+    # 1. Google Search
+    google_searcher = DWEBS.GoogleSearcher()
+    query_html_path = google_searcher.search(
+        query='HelpingAI-9B',
+        result_num=10,
+        safe=False,
+        overwrite=False,
     )
-    
-    # Execute the search and retrieve results
-    results = D.queries_to_search_results(search_params)
-    
-    return results
 
-def print_search_results(results):
-    """
-    Print the search results.
-    
-    Args:
-    - search_results (list): List of search results to print.
-    """
-    if results:
-        for index, result in enumerate(results, start=1):
-            print(f"Result {index}: {result}")
+    # 2. Search Result Extraction
+    query_results_extractor = DWEBS.QueryResultsExtractor()
+    query_search_results = query_results_extractor.extract(query_html_path)
+
+    if extract_webpage:
+        print('---------------Batch Webpage Fetcher--------------------')
+        # 3. Batch Webpage Fetching
+        batch_webpage_fetcher = DWEBS.BatchWebpageFetcher()
+        urls = [query_extracts['url'] for query_extracts in query_search_results['query_results']]
+        url_and_html_path_list = batch_webpage_fetcher.fetch(
+            urls,
+            overwrite=False,
+            output_parent=query_search_results["query"],
+        )
+
+        print('---------------Batch Webpage Extractor--------------------')
+        # 4. Batch Webpage Content Extraction
+        batch_webpage_content_extractor = DWEBS.BatchWebpageContentExtractor()
+        webpageurls = [url_and_html['html_path'] for url_and_html in url_and_html_path_list]
+        html_path_and_extracted_content_list = batch_webpage_content_extractor.extract(webpageurls)
+
+        # 5. Printing Extracted Content
+        for html_path_and_extracted_content in html_path_and_extracted_content_list:
+            print(html_path_and_extracted_content['extracted_content'])
     else:
-        print("No search results found.")
+        # Print only search results if extract_webpage is False
+        for result in query_search_results['query_results']:
+            DWEBS.logger.mesg(
+                f"{result['title']}\n"
+                f" - {result['site']}\n"
+                f" - {result['url']}\n"
+                f" - {result['abstract']}\n"
+                f"\n"
+            )
 
-def main():
-    # Prompt the user for a search query
-    query = input("Enter your search query: ")
-    
-    # Perform the web search
-    results = perform_web_search(query)
-    
-    # Print the search results
-    print_search_results(results)
+        DWEBS.logger.success(f"- {len(query_search_results['query_results'])} query results")
+        DWEBS.logger.success(f"- {len(query_search_results['related_questions'])} related questions")
 
-if __name__ == "__main__":
-    main()
+# Example usage:
+finalextractor(extract_webpage=True)  # Extract webpage content
+finalextractor(extract_webpage=False) # Skip webpage extraction and print search results only
 
 ```
 ## Text-to-Speech:
@@ -465,7 +476,7 @@ This ensures proper resource management and cleanup, as the context manager will
 Exceptions:
 - `WebscoutE`: Raised when there is a generic exception during the API request.
 
-## usage of webscout
+## usage of WEBS
 
 ### 1. `text()` - text search by DuckDuckGo.com 
 
@@ -614,6 +625,36 @@ from webscout import WEBS
 with WEBS() as WEBS:
     for r in WEBS.suggestions("fly"):
         print(r)
+```
+
+
+## usage of WEBSX -- Another Websearch thing
+```python
+from webscout import WEBSX
+
+def main():
+    # Initialize the WEBSX client
+    search = WEBSX(
+        k=10,  
+    )
+
+    # Example using `run` method - Get a summary
+    query = "What is the capital of France?"
+    answer = search.run(query)
+    print(f"Answer: {answer}\n")
+
+    # Example using `results` method - Get detailed results with metadata
+    query = "What is the capital of France?"
+    results = search.results(query, num_results=3)
+    print("Search Results:")
+    for result in results:
+        print(f"Title: {result['title']}")
+        print(f"Snippet: {result['snippet']}")
+        print(f"Link: {result['link']}\n")
+        print(f'Engines: {result["engines"]}')
+
+if __name__ == "__main__":
+    main()
 ```
 ## ALL acts
 <details>
@@ -876,7 +917,7 @@ ___
 ### 0. `Duckchat` - chat with LLM
 ```python
 from webscout import WEBS as w
-R = w().chat("hello", model='claude-3-haiku') # GPT-3.5 Turbo
+R = w().chat("hello", model='claude-3-haiku') # GPT-3.5 Turbo, mixtral-8x7b, llama-3-70b, claude-3-haiku
 print(R)
 ```
 ### 1. `PhindSearch` - Search using Phind.com 
@@ -889,6 +930,23 @@ ph = PhindSearch()
 
 # Define a prompt to send to the AI
 prompt = "write a essay on phind"
+
+# Use the 'ask' method to send the prompt and receive a response
+response = ph.ask(prompt)
+
+# Extract and print the message from the response
+message = ph.get_message(response)
+print(message)
+```
+Using phindv2
+```python
+from webscout import Phindv2
+
+# Create an instance of the PHIND class
+ph = Phindv2()
+
+# Define a prompt to send to the AI
+prompt = ""
 
 # Use the 'ask' method to send the prompt and receive a response
 response = ph.ask(prompt)
@@ -913,7 +971,7 @@ print(r)
 
 ```
 
-### 3. `You.com` - search/chat with you.com 
+### 3. `You.com` - search/chat with you.com - Not working
 ```python
 
 from webscout import YouChat
@@ -1037,6 +1095,45 @@ while True:
     response_str = opengpt.chat(prompt)
     print(response_str)
 ```
+```python
+from webscout import OPENGPTv2
+
+# Initialize the bot with all specified settings
+bot = OPENGPTv2(
+    generate_new_agents=True,  # Set to True to generate new IDs, False to load from file
+    assistant_name="My Custom Assistant",
+    retrieval_description="Helpful information from my files.",
+    agent_system_message="",
+    enable_action_server=False,  # Assuming you want to disable Action Server by Robocorp
+    enable_ddg_search=False,  # Enable DuckDuckGo search tool
+    enable_arxiv=False,  # Assuming you want to disable Arxiv
+    enable_press_releases=False,  # Assuming you want to disable Press Releases (Kay.ai)
+    enable_pubmed=False,  # Assuming you want to disable PubMed
+    enable_sec_filings=False,  # Assuming you want to disable SEC Filings (Kay.ai)
+    enable_retrieval=False,  # Assuming you want to disable Retrieval
+    enable_search_tavily=False,  # Assuming you want to disable Search (Tavily)
+    enable_search_short_answer_tavily=False,  # Assuming you want to disable Search (short answer, Tavily)
+    enable_you_com_search=True,  # Assuming you want to disable You.com Search
+    enable_wikipedia=False,  # Enable Wikipedia tool
+    is_public=True,
+    is_conversation=True,
+    max_tokens=800,
+    timeout=40,
+    filepath="opengpt_conversation_history.txt",
+    update_file=True,
+    history_offset=10250,
+    act=None,
+)
+
+# Example interaction loop
+while True:
+    prompt = input("You: ")
+    if prompt.strip().lower() == 'exit':
+        break
+    response = bot.chat(prompt)
+    print(response)
+
+```
 ### 9. `KOBOLDAI` - 
 ```python
 from webscout import KOBOLDAI
@@ -1152,7 +1249,112 @@ print(response)
 Usage code similar to other proviers
 
 ### 16. `BasedGPT` - chat with GPT
-Usage code similar to other providers
+```
+from webscout import BasedGPT
+
+# Initialize the BasedGPT provider
+basedgpt = BasedGPT(
+    is_conversation=True,  # Chat conversationally
+    max_tokens=600,  # Maximum tokens to generate
+    timeout=30,  # HTTP request timeout
+    intro="You are a helpful and friendly AI.",  # Introductory prompt
+    filepath="chat_history.txt",  # File to store conversation history
+    update_file=True,  # Update the chat history file
+)
+
+# Send a prompt to the AI
+prompt = "What is the meaning of life?"
+response = basedgpt.chat(prompt)
+
+# Print the AI's response
+print(response)
+```
+### 17. `DeepSeek` -chat with deepseek
+```python
+from webscout import DeepSeek
+from rich import print
+
+ai = DeepSeek(
+    is_conversation=True,
+    api_key='', # Watch this video https://youtu.be/Euin6p5Ryks?si=-84JBtyqGwMzvdIq to know from where u can get this key for free 
+    max_tokens=800,
+    timeout=30,
+    intro=None,
+    filepath=None,
+    update_file=True,
+    proxies={},
+    history_offset=10250,
+    act=None,
+    model="deepseek_chat"
+)
+
+# Start an infinite loop for continuous interaction
+while True:
+    # Define a prompt to send to the AI
+    prompt = input("Enter your prompt: ")
+    
+    # Check if the user wants to exit the loop
+    if prompt.lower() == "exit":
+        break
+    
+    # Use the 'chat' method to send the prompt and receive a response
+    r = ai.chat(prompt)
+    print(r)
+```
+### 18. `Deepinfra`
+```python
+from webscout import DeepInfra
+
+ai = DeepInfra(
+    is_conversation=True,
+    model= "Qwen/Qwen2-72B-Instruct",
+    max_tokens=800,
+    timeout=30,
+    intro=None,
+    filepath=None,
+    update_file=True,
+    proxies={},
+    history_offset=10250,
+    act=None,
+)
+
+prompt = "what is meaning of life"
+
+response = ai.ask(prompt)
+
+# Extract and print the message from the response
+message = ai.get_message(response)
+print(message)
+```
+
+### 19. `Deepinfra` - VLM
+```python
+from webscout.Provider import VLM 
+
+# Load your image
+image_path = r"C:\Users\koula\OneDrive\Desktop\Webscout\photo_2024-03-25_19-23-40.jpg"
+
+vlm_instance = VLM(model="llava-hf/llava-1.5-7b-hf", is_conversation=True, max_tokens=600, timeout=30, system_prompt="You are a Helpful AI.")
+image_base64 = vlm_instance.encode_image_to_base64(image_path)
+
+prompt = {
+    "content": "What is in this image?",
+    "image": image_base64
+}
+
+# Generate a response
+response = vlm_instance.chat(prompt)
+print(response)
+
+```
+### 20. `VTLchat` - Free gpt3.5
+```python
+from webscout import VTLchat
+
+provider = VTLchat()
+response = provider.chat("Hello, how are you?")
+print(response)
+```
 ### `LLM` 
 ```python
 from webscout.LLM import LLM
@@ -1180,6 +1382,7 @@ while True:
     print("AI: ", response)
 ```
 ### `Local-LLM` webscout can now run GGUF models
+Local LLM's some functions are taken from easy-llama
 ```python
 from webscout.Local.utils import download_model
 from webscout.Local.model import Model
@@ -1199,77 +1402,93 @@ thread = Thread(model, formats.phi3)
 # 4. Start interacting with the model
 thread.interact()
 ```
-### `Function-calling-local-llm`
-```python
-from webscout.Local import Model, Thread, formats
-from webscout import DeepWEBS
-from webscout.Local.utils import download_model
-from webscout.Local.model import Model
-from webscout.Local.thread import Thread
-from webscout.Local import formats
-from webscout.Local.samplers import SamplerSettings
-def deepwebs_search(query, max_results=5):
-    """Performs a web search using DeepWEBS and returns results as JSON."""
-    deepwebs = DeepWEBS()
-    search_config = DeepWEBS.DeepSearch(
-        queries=[query],
-        max_results=max_results,
-        extract_webpage=False,
-        safe=False,
-        types=["web"],
-        overwrite_query_html=True,
-        overwrite_webpage_html=True,
-    )
-    search_results = deepwebs.queries_to_search_results(search_config)
-    formatted_results = []
-    for result in search_results[0]:  # Assuming only one query
-        formatted_results.append(f"Title: {result['title']}\nURL: {result['url']}\n")
-    return "\n".join(formatted_results)
 
-# Load your model
-repo_id = "OEvortex/HelpingAI-9B" 
-filename = "helpingai-9b.Q4_0.gguf"
+### `Local-rawdog`
+```python
+import webscout.Local as ws
+from webscout.Local.rawdog import RawDog
+from webscout.Local.samplers import DefaultSampling
+from webscout.Local.formats import chatml, AdvancedFormat
+from webscout.Local.utils import download_model
+import datetime
+import sys
+import os
+
+repo_id = "YorkieOH10/granite-8b-code-instruct-Q8_0-GGUF" 
+filename = "granite-8b-code-instruct.Q8_0.gguf"
 model_path = download_model(repo_id, filename, token='')
 
-# 2. Load the model 
-model = Model(model_path, n_gpu_layers=10)
+# Load the model using the downloaded path
+model = ws.Model(model_path, n_gpu_layers=10)
 
-# Create a Thread
-system_prompt = "You are a helpful AI assistant. Respond to user queries concisely. If a user asks for information that requires a web search, use the `deepwebs_search` tool. Do not call the tool if it is not necessary."
-sampler = SamplerSettings(temp=0.7, top_p=0.9)  # Adjust these values as needed
-# 4. Create a custom chatml format with your system prompt
-custom_chatml = formats.chatml.copy()
-custom_chatml['system_content'] = system_prompt
-thread = Thread(model, custom_chatml, sampler=sampler)
-# Add the deepwebs_search tool
-thread.add_tool({
-    "type": "function",
-    "function": {
-        "name": "deepwebs_search",
-        "description": "Performs a web search using DeepWEBS and returns the title and URLs of the results.",
-        "execute": deepwebs_search,
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "The query to search on the web",
-                },
-                "max_results": {
-                    "type": "integer",
-                    "description": "Maximum number of search results (default: 5)",
-                },
-            },
-            "required": ["query"],
-        },
-    },
-})
+rawdog = RawDog()
 
-# Start interacting with the model
+# Create an AdvancedFormat and modify the system content
+# Use a lambda to generate the prompt dynamically:
+chat_format = AdvancedFormat(chatml)
+#  **Pre-format the intro_prompt string:**
+system_content = f"""
+You are a command-line coding assistant called Rawdog that generates and auto-executes Python scripts.
+
+A typical interaction goes like this:
+1. The user gives you a natural language PROMPT.
+2. You:
+    i. Determine what needs to be done
+    ii. Write a short Python SCRIPT to do it
+    iii. Communicate back to the user by printing to the console in that SCRIPT
+3. The compiler extracts the script and then runs it using exec(). If there will be an exception raised,
+ it will be send back to you starting with "PREVIOUS SCRIPT EXCEPTION:".
+4. In case of exception, regenerate error free script.
+
+If you need to review script outputs before completing the task, you can print the word "CONTINUE" at the end of your SCRIPT.
+This can be useful for summarizing documents or technical readouts, reading instructions before
+deciding what to do, or other tasks that require multi-step reasoning.
+A typical 'CONTINUE' interaction looks like this:
+1. The user gives you a natural language PROMPT.
+2. You:
+    i. Determine what needs to be done
+    ii. Determine that you need to see the output of some subprocess call to complete the task
+    iii. Write a short Python SCRIPT to print that and then print the word "CONTINUE"
+3. The compiler
+    i. Checks and runs your SCRIPT
+    ii. Captures the output and appends it to the conversation as "LAST SCRIPT OUTPUT:"
+    iii. Finds the word "CONTINUE" and sends control back to you
+4. You again:
+    i. Look at the original PROMPT + the "LAST SCRIPT OUTPUT:" to determine what needs to be done
+    ii. Write a short Python SCRIPT to do it
+    iii. Communicate back to the user by printing to the console in that SCRIPT
+5. The compiler...
+
+Please follow these conventions carefully:
+- Decline any tasks that seem dangerous, irreversible, or that you don't understand.
+- Always review the full conversation prior to answering and maintain continuity.
+- If asked for information, just print the information clearly and concisely.
+- If asked to do something, print a concise summary of what you've done as confirmation.
+- If asked a question, respond in a friendly, conversational way. Use programmatically-generated and natural language responses as appropriate.
+- If you need clarification, return a SCRIPT that prints your question. In the next interaction, continue based on the user's response.
+- Assume the user would like something concise. For example rather than printing a massive table, filter or summarize it to what's likely of interest.
+- Actively clean up any temporary processes or files you use.
+- When looking through files, use git as available to skip files, and skip hidden files (.env, .git, etc) by default.
+- You can plot anything with matplotlib.
+- ALWAYS Return your SCRIPT inside of a single pair of ``` delimiters. Only the console output of the first such SCRIPT is visible to the user, so make sure that it's complete and don't bother returning anything else.
+"""
+chat_format.override('system_content', lambda: system_content)
+
+thread = ws.Thread(model, format=chat_format, sampler=DefaultSampling)
+
 while True:
-    user_input = input("You: ")
-    response = thread.send(user_input)
-    print("Bot: ", response) 
+    prompt = input(">: ")
+    if prompt.lower() == "q":
+        break
+
+    response = thread.send(prompt)
+
+    # Process the response using RawDog
+    script_output = rawdog.main(response)
+
+    if script_output:
+        print(script_output)
+
 ```
 ### `LLM` with internet
 ```python
@@ -1344,94 +1563,7 @@ if __name__ == "__main__":
         else:
             print("No response")
 ```
-### LLM with deepwebs
-```python
-from __future__ import annotations
-from typing import List, Optional
-from webscout.LLM import LLM
-from webscout import DeepWEBS
-import warnings
 
-system_message: str = (
-    "As an AI assistant, I have been designed with advanced capabilities, including real-time access to online resources. This enables me to enrich our conversations and provide you with informed and accurate responses, drawing from a vast array of information. With each interaction, my goal is to create a seamless and meaningful connection, offering insights and sharing relevant content."
-    "My directives emphasize the importance of respect, impartiality, and intellectual integrity. I am here to provide unbiased responses, ensuring an ethical and respectful exchange. I will respect your privacy and refrain from sharing any personal information that may be obtained during our conversations or through web searches, only utilizing web search functionality when necessary to provide the most accurate and up-to-date information."
-    "Together, let's explore a diverse range of topics, creating an enjoyable and informative experience, all while maintaining the highest standards of privacy and respect"
-)
-
-# Ignore the specific UserWarning
-warnings.filterwarnings("ignore", category=UserWarning, module="curl_cffio", lineno=205)
-
-LLM = LLM(model="mistralai/Mixtral-8x22B-Instruct-v0.1", system_message=system_message)
-
-def perform_web_search(query):
-    # Initialize the DeepWEBS class
-    D = DeepWEBS()
-
-    # Set up the search parameters
-    search_params = D.DeepSearch(
-        queries=[query],  # Query to search
-        result_num=10,  # Number of search results
-        safe=True,  # Enable SafeSearch
-        types=["web"],  # Search type: web
-        extract_webpage=True,  # True for extracting webpages
-        overwrite_query_html=True,
-        overwrite_webpage_html=True,
-    )
-
-    # Execute the search and retrieve results
-    results = D.queries_to_search_results(search_params)
-    return results
-
-def chat(user_input: str, result_num: int = 10) -> Optional[str]:
-    """
-    Chat function to perform a web search based on the user input and generate a response using the LLM model.
-
-    Parameters
-    ----------
-    user_input : str
-        The user input to be used for the web search
-    max_results : int, optional
-        The maximum number of search results to include in the response, by default 10
-
-    Returns
-    -------
-    Optional[str]
-        The response generated by the LLM model, or None if there is no response
-    """
-    # Perform a web search based on the user input
-    search_results = perform_web_search(user_input)
-
-    # Extract URLs from search results
-    url_results = []
-    for result in search_results[0]['query_results']:
-        url_results.append(f"{result['title']} ({result['site']}): {result['url']}")
-
-    # Format search results
-    formatted_results = "\n".join(url_results)
-
-    # Define the messages to be sent, including the user input, search results, and system message
-    messages = [
-        {"role": "user", "content": f"User question is:\n{user_input}\nwebsearch results are:\n{formatted_results}"},
-    ]
-
-    # Use the chat method to get the response
-    response = LLM.chat(messages)
-    return response
-
-if __name__ == "__main__":
-    while True:
-        # Get the user input
-        user_input = input("User: ")
-
-        # Perform a web search based on the user input
-        response = chat(user_input)
-
-        # Print the response
-        if response:
-            print("AI:", response)
-        else:
-            print("No response")
-```
 ## `Webai` - terminal gpt and a open interpeter
 
 ```python
@@ -1473,7 +1605,7 @@ class TaskExecutor:
         self._proxy_path: str = None  # Path to proxy configuration
 
         # History Management
-        self._history_filepath: str = None
+        self._history_filepath: str = "history.txt"
         self._update_history_file: bool = True
         self._history_offset: int = 10250
 
@@ -1484,7 +1616,7 @@ class TaskExecutor:
         # Optional Features
         self._web_search_enabled: bool = False  # Enable web search
         self._rawdog_enabled: bool = True
-        self._internal_script_execution_enabled: bool = False
+        self._internal_script_execution_enabled: bool = True
         self._script_confirmation_required: bool = False
         self._selected_interpreter: str = "python"
         self._selected_optimizer: str = "code"
@@ -1512,6 +1644,9 @@ class TaskExecutor:
             "chatgptuk": webscout.ChatGPTUK,
             "poe": webscout.POE,
             "basedgpt": webscout.BasedGPT,
+            "deepseek": webscout.DeepSeek,
+            "deepinfra": webscout.DeepInfra,
+            "opengenptv2": webscout.OPENGPTv2
         }
 
         # Initialize Rawdog if enabled
@@ -1641,13 +1776,26 @@ class TaskExecutor:
         """
         try:
             is_feedback = self._rawdog_instance.main(response)
+            if is_feedback and "PREVIOUS SCRIPT EXCEPTION" in is_feedback:
+                self._console.print(Markdown(f"LLM: {is_feedback}"))
+                error_message = is_feedback.split("PREVIOUS SCRIPT EXCEPTION:\n")[1].strip()
+                # Generate a solution for the error and execute it
+                error_solution_query = (
+                    f"The following code was executed and resulted in an error:\n\n"
+                    f"{response}\n\n"
+                    f"Error: {error_message}\n\n"
+                    f"Please provide a solution to fix this error in the code and execute it."
+                )
+                try:
+                    new_response = self._ai_model.chat(error_solution_query)
+                    self._handle_rawdog_response(new_response)
+                except webscout.exceptions.FailedToGenerateResponseError as e:
+                    self._console.print(Markdown(f"LLM: [red]Error while generating solution: {e}[/red]"))
+            else:
+                self._console.print(Markdown("LLM: (Script executed successfully)"))
         except Exception as e:
             self._console.print(Markdown(f"LLM: [red]Error: {e}[/red]"))
-            return
-        if is_feedback:
-            self._console.print(Markdown(f"LLM: {is_feedback}"))
-        else:
-            self._console.print(Markdown("LLM: (Script executed successfully)"))
+
 
     async def process_async_query(self, query: str) -> None:
         """

@@ -625,7 +625,23 @@ class Main(cmd.Cmd):
                     model=getOr(model, "reka-core"),
                     # quiet=quiet,
                 )
+            elif provider == "deepseek":
+                from webscout import DeepSeek
 
+                self.bot = DeepSeek(
+                    api_key=auth,
+                    is_conversation=disable_conversation,
+                    max_tokens=max_tokens,
+                    timeout=timeout,
+                    intro=intro,
+                    filepath=filepath,
+                    update_file=update_file,
+                    proxies=proxies,
+                    history_offset=history_offset,
+                    act=awesome_prompt,
+                    model=getOr(model, "deepseek_chat"),
+                    # quiet=quiet,
+                )
             elif provider == "koboldai":
                 from webscout import KOBOLDAI
 
@@ -639,6 +655,21 @@ class Main(cmd.Cmd):
                     filepath=filepath,
                     update_file=update_file,
                     proxies=proxies,
+                    history_offset=history_offset,
+                    act=awesome_prompt,
+                )
+            elif provider == "deepinfra":
+                from webscout import DeepInfra
+
+                self.bot = DeepInfra(
+                    is_conversation=disable_conversation,
+                    max_tokens=max_tokens,
+                    timeout=timeout,
+                    intro=intro,
+                    filepath=filepath,
+                    update_file=update_file,
+                    proxies=proxies,
+                    model=getOr(model, "Qwen/Qwen2-72B-Instruct"),
                     history_offset=history_offset,
                     act=awesome_prompt,
                 )

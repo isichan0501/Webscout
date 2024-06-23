@@ -14,13 +14,16 @@ from .Leo import LEO
 from .Leo import AsyncLEO
 from .Koboldai import KOBOLDAI
 from .Koboldai import AsyncKOBOLDAI
-from .OpenGPT import OPENGPT 
+from .OpenGPT import OPENGPT
+from .OpenGPT import OPENGPTv2
 from .OpenGPT import AsyncOPENGPT
 from .Perplexity import PERPLEXITY
 from .Blackboxai import BLACKBOXAI 
 from .Blackboxai import AsyncBLACKBOXAI
 from .Phind import PhindSearch 
 from .Phind import AsyncPhindSearch
+from .Phind import Phindv2
+from .Phind import AsyncPhindv2
 from .Yepchat import YEPCHAT
 from .Yepchat import AsyncYEPCHAT
 from .Youchat import YouChat
@@ -29,6 +32,9 @@ from .Berlin4h import Berlin4h
 from .ChatGPTUK import ChatGPTUK
 from .Poe import POE
 from .BasedGPT import BasedGPT
+from .Deepseek import DeepSeek
+from .Deepinfra import DeepInfra, VLM, AsyncDeepInfra
+from .VTLchat import VTLchat
 __all__ = [
     'ThinkAnyAI',
     'Xjai',
@@ -59,4 +65,13 @@ __all__ = [
     'ChatGPTUK',
     'POE',
     'BasedGPT',
+    'DeepSeek',
+    'DeepInfra',
+    'VLM',
+    'AsyncDeepInfra',
+    'VTLchat',
+    'AsyncPhindv2',
+    'Phindv2',
+    'OPENGPTv2',
+
 ]

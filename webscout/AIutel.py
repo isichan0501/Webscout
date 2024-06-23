@@ -47,6 +47,8 @@ webai = [
    "auto",
    "poe",
    "basedgpt",
+   "deepseek",
+   "deepinfra",
 ]
 gpt4free_providers = [
     provider.__name__ for provider in g4f.Provider.__providers__  # if provider.working
@@ -213,12 +215,12 @@ class Conversation:
         ), f"File '{filepath}' does not exist"
         if not os.path.isfile(filepath):
             logging.debug(f"Creating new chat-history file - '{filepath}'")
-            with open(filepath, "w") as fh:  # Try creating new file
+            with open(filepath, "w", encoding='utf-8') as fh:  # Try creating new file
                 # lets add intro here
                 fh.write(self.intro)
         else:
             logging.debug(f"Loading conversation from '{filepath}'")
-            with open(filepath) as fh:
+            with open(filepath, encoding='utf-8') as fh:
                 file_contents = fh.read()
                 # Presume intro prompt is part of the file content
                 self.chat_history = file_contents
@@ -269,7 +271,7 @@ class Conversation:
             return
         new_history = self.history_format % dict(user=prompt, llm=response)
         if self.file and self.update_file:
-            with open(self.file, "a") as fh:
+            with open(self.file, "a", encoding='utf-8') as fh:
                 fh.write(new_history)
         self.chat_history += new_history
 
@@ -540,6 +542,7 @@ print("The essay is about...")
         """
         if not quiet:
             print(
+                "Rawdog is an experimental tool that generates and auto-executes Python scripts in the cli.\n"
                 "To get the most out of Rawdog. Ensure the following are installed:\n"
                 " 1. Python 3.x\n"
                 " 2. Dependency:\n"
@@ -645,14 +648,14 @@ Current Datetime : {datetime.datetime.now()}
         else:
             logging.info(message)
 
-    def main(self, response: str) -> None:
+    def main(self, response: str):
         """Exec code in response accordingly
 
         Args:
-            response (str): AI response
+            response: AI response
 
         Returns:
-            None|str: None if script executed successfully else stdout data
+            Optional[str]: None if script executed successfully else stdout data
         """
         code_blocks = re.findall(r"```python.*?```", response, re.DOTALL)
         if len(code_blocks) != 1:
@@ -688,6 +691,7 @@ Current Datetime : {datetime.datetime.now()}
                         self.log("Returning success feedback")
                         return f"LAST SCRIPT OUTPUT:\n{proc.stdout}"
                     else:
+                        
                         self.log("Returning error feedback", "error")
                         return f"PREVIOUS SCRIPT EXCEPTION:\n{proc.stderr}"
                 else:
@@ -698,12 +702,14 @@ Current Datetime : {datetime.datetime.now()}
                     self.log("Executing script internally")
                     exec(raw_code_plus)
                 except Exception as e:
+                    error_message = str(e)
                     self.log(
-                        "Exception occurred while executing script. Responding with error: "
-                        f"{e.args[1] if len(e.args)>1 else str(e)}",
-                        "error",
+                        f"Exception occurred while executing script. Responding with error: {error_message}",
+                        "error" 
                     )
-                    return f"PREVIOUS SCRIPT EXCEPTION:\n{str(e)}"
+                    # Return the exact error message
+                    return f"PREVIOUS SCRIPT EXCEPTION:\n{error_message}"
+
 class Audio:
     # Request headers
     headers: dict[str, str] = {
